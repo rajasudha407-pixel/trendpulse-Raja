@@ -10,7 +10,6 @@ headers = {
     "User-Agent": "TrendPulse/1.0"
 }
 
-# keywords for each category
 category_keywords = {
     "technology": ["ai", "software", "tech", "code", "computer", "data", "cloud", "api", "gpu", "llm"],
     "worldnews": ["war", "government", "country", "president", "election", "climate", "attack", "global"],
@@ -18,6 +17,8 @@ category_keywords = {
     "science": ["research", "study", "space", "physics", "biology", "discovery", "nasa", "genome"],
     "entertainment": ["movie", "film", "music", "netflix", "game", "book", "show", "award", "streaming"]
 }
+
+#step 1:top story apply
 def find_category(title):
     title = title.lower()
     for category in category_keywords:
@@ -25,8 +26,6 @@ def find_category(title):
             if word in title:
                 return category
     return None
-  
-#step 1:top story apply
 try:
     response = requests.get(top_stories_url, headers=headers)
     story_ids = response.json()
