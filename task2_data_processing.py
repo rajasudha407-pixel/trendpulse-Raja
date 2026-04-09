@@ -28,7 +28,5 @@ if not os.path.exists("data"):
 output_file = "data/trends_clean.csv"
 df.to_csv(output_file, index=False)
 print("\nSaved", len(df), "rows to", output_file)
-
-# print category summary
 print("\nStories per category:")
 print(df["category"].value_counts())
